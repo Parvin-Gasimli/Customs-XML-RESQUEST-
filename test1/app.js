@@ -6,10 +6,11 @@
 // //   xhr.onprogress=function (){
 // //       //processing request
 // //   }
-//   xhr.open("GET", "data.txt", true);
+//   xhr.open("GET", "https://jsonplaceholder.typicode.com/posts", true);
 //   xhr.onload = function () {
 //     if (this.status === 200) {
-//      document.getElementById("output").innerHTML= `<h1>${this.responseText}</h1>`
+//       const data=JSON.parse(this.responseText)
+//      document.getElementById("output").innerHTML= `<li>${data.title}</li>`
 //     }
 //   };
 
@@ -34,10 +35,9 @@ function getData(e) {
       const output = `
        <ul>
        <li>ID:${customer.id}</li>
-       <li>Name:${customer.name}</li>
-       <li>SURNAME:${customer.surname}</li>
-       <li>COMPANY:${customer.company}</li>
-       <li>PHONE:${customer.phone}</li>
+       <li>Name:${customer.title}</li>
+       <li>SURNAME:${customer.body}</li>
+      
        </ul>`;
       document.getElementById("customer").innerHTML = output;
     }
@@ -73,3 +73,30 @@ function getDatas(e) {
   };
   xhr.send();
 }
+
+
+
+// document.getElementById("button").addEventListener("click",GetData)
+// function GetData(){
+//   const xhr=new XMLHttpRequest()
+//   xhr.onprogress=function(){
+//     xhr.open('GET',"data.txt",true)
+
+//     xhr.onload=function(){
+//       if(this.status==200){
+//       document.getElementById('output').innerHTML=`<h3>${this.responseText}} </h3>`
+
+//       }
+//     }
+
+//   }
+//   xhr.send()
+// }
+
+
+
+
+
+
+
+
